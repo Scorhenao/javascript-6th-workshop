@@ -26,8 +26,8 @@ console.log("Fuera de la función:", globalVariable);
 testScope();
 
 function validateResponses(responses) {
-    const contieneUno = responses.find(res => res === "1");
-    const contieneDos = responses.some(res => res === "2");
+    const contieneUno = responses.includes("1");
+    const contieneDos = responses.includes("2");
 
     if (contieneUno) {
         return 1; // Respuesta correcta (SI)
@@ -58,7 +58,7 @@ function consultUser() {
             `¿Crees que se puede acceder a globalVariable desde cualquier parte del codigo?\n1. SI\n2. NO \n\n¿Por qué?`
         ));
 
-        const userResValidated1 = validateResponses([userRes1]);
+        const userResValidated1 = validateResponses(userRes1);
         console.log(userResValidated1);
         if (userResValidated1 === 1) {
             corrects.push(1);
@@ -71,7 +71,7 @@ function consultUser() {
             `¿Crees que se puede acceder a functionVariable desde cualquier parte del codigo?\n1. SI\n2. NO\n¿Por qué?`
         ));
 
-        const userResValidated2 = validateResponses([userRes2]);
+        const userResValidated2 = validateResponses(userRes2);
         if (userResValidated2 === 1) {
             incorrects.push(1);
         } 
@@ -83,7 +83,7 @@ function consultUser() {
             `¿Crees que se puede acceder a blockVariable desde cualquier parte del codigo?\n1. SI\n2. NO\n¿Por qué?`
         ));
 
-        const userResValidated3 = validateResponses([userRes3]);
+        const userResValidated3 = validateResponses(userRes3);
         if (userResValidated3 === 1) {
             incorrects.push(1);
         }
