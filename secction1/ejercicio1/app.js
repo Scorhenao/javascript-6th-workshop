@@ -59,7 +59,6 @@ function consultUser() {
         ));
 
         const userResValidated1 = validateResponses(userRes1);
-        console.log(userResValidated1);
         if (userResValidated1 === 1) {
             corrects.push(1);
         }
